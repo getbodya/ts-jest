@@ -23,7 +23,7 @@ Array.prototype.cube = function (): number[] {
 }
 // @ts-ignore
 Array.prototype.average = function (): number | NaN {
-    return !this.length ? NaN : this.reduce((acc, val) => acc + val, 0) / 2
+    return !this.length ? NaN : this.reduce((acc, val) => acc + val, 0) / this.length
 }
 // @ts-ignore
 Array.prototype.sum = function (): number {

@@ -19,6 +19,11 @@ describe('missingVowel', function () {
         const str = "Jhn D hs svn rd ppls undr his bskt";
         expect(missingVowel(str)).toBe('a, e, o');
     });
+
+    test("should return missing vowels in word 'playground'", () => {
+        const str = "playground";
+        expect(missingVowel(str)).toBe('e, i');
+    });
 });
 
 describe('middleSymbol', function () {
@@ -78,41 +83,38 @@ describe('awesomeArray', function () {
     test("should return a copy of the array, containing all values squared", () => {
         // @ts-ignore
         expect(awesomeArray.square()).toEqual([1, 4, 9]);
-        expect(awesomeArray).toEqual(initialArray);
     });
 
     test("should return a copy of the array, containing all values cubed", () => {
         // @ts-ignore
         expect(awesomeArray.cube()).toEqual([1, 8, 27]);
-        expect(awesomeArray).toEqual(initialArray);
     });
 
     test("should return the average of all array values", () => {
         // @ts-ignore
-        expect(awesomeArray.average()).toBe(3);
-        expect(awesomeArray).toEqual(initialArray);
+        expect(awesomeArray.average()).toBe(2);
     });
     test("should return NaN on an empty array", () => {
         // @ts-ignore
         expect(new Array().average()).toBe(NaN);
-        expect(awesomeArray).toEqual(initialArray);
     });
 
     test("should return the sum of all array values", () => {
         // @ts-ignore
         expect(awesomeArray.sum()).toBe(6);
-        expect(awesomeArray).toEqual(initialArray);
     });
 
     test("should return an array of all even numbers", () => {
         // @ts-ignore
         expect(awesomeArray.even()).toEqual([2]);
-        expect(awesomeArray).toEqual(initialArray);
     });
 
     test("should return an array of all odd numbers", () => {
         // @ts-ignore
         expect(awesomeArray.odd()).toEqual([1, 3]);
+    });
+
+    test("should not modify the initial array", () => {
         expect(awesomeArray).toEqual(initialArray);
     });
 });

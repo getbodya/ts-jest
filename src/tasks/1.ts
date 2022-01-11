@@ -23,9 +23,9 @@ export const missingVowel = (string: string): string => {
     };
     const VOWELS: string[] = Object.keys(vowelsInString);
 
-    string.split('').forEach((letter) => {
+    string.split('').forEach((letter: string) => {
         if (vowelsInString.hasOwnProperty(letter.toLowerCase())) {
-            vowelsInString[letter] = true;
+            vowelsInString[letter.toLowerCase()] = true;
         }
     });
 
@@ -34,3 +34,4 @@ export const missingVowel = (string: string): string => {
 
 console.log(missingVowel("Bb Smith sent us six neatly arranged range bicycles"))
 console.log(missingVowel("John Doe hs seven red pples under his bsket"))
+console.log(missingVowel("playground"))
