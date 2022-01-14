@@ -7,3 +7,15 @@
 
 // ball1.ballType     //=> "regular"
 // ball2.ballType     //=> "super"
+
+export class Ball {
+    type: string;
+
+    constructor(type?: string) {
+        this.type = type ? type : 'regular';
+    }
+
+    get ballType(): string {
+        return this.type
+    }
+}

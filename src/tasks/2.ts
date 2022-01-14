@@ -16,3 +16,15 @@
 // #Output
 
 // The middle character(s) of the word represented as a string.
+
+export const middleSymbol = (string: string): string => {
+    const length = string.length;
+    if (!length) return '';
+
+    if (length % 2 == 0) {
+        const middle = Math.trunc(length / 2);
+        return `${string[middle -1]}${string[middle]}`
+    } else {
+        return string[Math.trunc(length / 2)];
+    }
+}

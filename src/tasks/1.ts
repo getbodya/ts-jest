@@ -10,3 +10,28 @@
 // Examples
 // "John Doe hs seven red pples under his bsket"          =>  0  ; missing: "a"
 // "Bb Smith sent us six neatly arranged range bicycles"  =>  3  ; missing: "o"
+
+export const missingVowel = (string: string): string => {
+    if (!string.length) return '';
+
+    const vowelsInString: Record<string, boolean> = {
+        a: false,
+        e: false,
+        i: false,
+        o: false,
+        u: false,
+    };
+    const VOWELS: string[] = Object.keys(vowelsInString);
+
+    string.split('').forEach((letter: string) => {
+        if (vowelsInString.hasOwnProperty(letter.toLowerCase())) {
+            vowelsInString[letter.toLowerCase()] = true;
+        }
+    });
+
+    return VOWELS.filter((vowel) => !vowelsInString[vowel]).join(', ');
+}
+
+console.log(missingVowel("Bb Smith sent us six neatly arranged range bicycles"))
+console.log(missingVowel("John Doe hs seven red pples under his bsket"))
+console.log(missingVowel("playground"))
